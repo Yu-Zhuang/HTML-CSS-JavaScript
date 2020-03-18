@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML tags</title>
+    <style>
+    	h1{
+    		font-size: 56px;
+    		text-align: center;
+    	}
+    	p{
+    		text-align: center;
+    	}
+        .main{
+            box-sizing: border-box;
+            width: 400px;
+            margin: 0 auto;
+            font-size: 30px;
+        }
+        div{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- form -->
+    <h1>Server Page</h1>
+    <div class="main" id="main"></div>
+<script>
+    var list= [];
+    var id=0;
+    let urlget=new URLSearchParams(window.location.search);
+    var fname=urlget.get('fname');
+    var lname=urlget.get('lname');
+    var account=urlget.get('account');
+    var password=urlget.get('password');
+    var gender=urlget.get('gender');
+    var age=urlget.get('age');
+    var contry=urlget.get('contry');
+    var main=document.getElementById('main');
+    var content=
+    `
+        <div class="item" id="${account}">
+            <div class="fname">First name : "${fname}"</div>
+            <div class="lname">Last name : "${lname}"</div>
+            <div class="account">Account : "${account}"</div>
+            <div class="password">Password : "${password}"</div>
+            <div class="ga">Gender | Age : "${gender}" | "${age}"</div>
+            <div class="contry">Contry : "${contry}"</div>
+        </div>
+    `
+    list.push(content);
+    main.innerHTML+=list[id];
+    id++;
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML tags</title>
+    <style>
+        body{
+            background-color: #ded;
+        }
+        .web{
+            box-sizing: border-box;
+            width: 70%;
+            margin: 0 auto;
+            font-size: 20px;
+        }
+        .web h1{
+            text-align: center;
+        }
+        form{
+            width: 400px;
+        }
+        .item{
+            background-color: #ccf;
+            line-height: 20px;
+            padding-left: 10px;
+        }
+        .main{
+            border: 2px solid #000;
+            box-sizing: border-box;
+            width: 70%;
+            margin: 0 auto;
+        }
+        .main h1{
+            text-align: center;
+            background-color: #ffa;
+            margin: 0px;
+            padding: 0px;
+            border-bottom: 2px solid #000;
+        }
+        .main span{
+            display: block;
+            font-weight: bold;
+            font-size: 24;
+            padding-left: 20px;
+            background-color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="web">
+        <!-- form -->
+        <h1>Form Tag</h1>
+        <form action="sever.html" target="blank" method="get">
+            <!--name-->
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" value="first name"><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" value="last name"><br>
+            <!--gender-->
+            <input type="radio" id="bradio" value="boy" name="gender" checked="checked">
+            <label for="bradio">boy</label>
+            <input type="radio" id="gradio" value="girl" name="gender">
+            <label for="radio">girl</label><br>
+            <!--age-->
+            <label for="number">Age</label>
+            <input type="number" id="age" name="age" value="18" min="0" max="200"><br>
+            <!--account/password-->
+            <label for="">account</label>
+            <input type="text" value="" id="account" name="account"><br>
+            <label for="">password</label>
+            <input type="password" value="" id="password" name="password"><br>
+            <!--select-->
+            <label for="contry">Contry</label>
+            <select name="contry" id="select">
+                <option value="Taiwan">Taiwan</option>
+                <option value="Japan">Japan</option>
+                <option value="Korea">Korea</option>
+            </select><br>
+            <!--field set / check box-->
+            <fieldset>
+                <legend>habit</legend>
+                <input type="checkbox" value="sport" name="habit" class="habit">sport</input>
+                <input type="checkbox" value="music" name="habit" class="habit">music</input>
+                <input type="checkbox" value="game" name="habit" class="habit">game</input>
+            </fieldset>
+            <!--button-->
+            <input type="button" value="add" onclick="addUser()">
+            <input type="submit" value="submit">
+            <input type="reset" value="reset"> 
+            <input type="button" value="back" onclick="history.back()">  
+        </form>
+    </div>
+
+    <div class="main" id="main"><h1>Data Base</h1></div>
+
+
+
+
+
+
+
+<script>
+    var id=1;
+    function addUser(){
+        var fname=document.getElementById('fname').value;
+        var lname=document.getElementById('lname').value;
+        //
+        var gender = document.querySelector('input[type=radio]:checked').value;
+        var habit = [];
+        habit = document.querySelector('.habit:checked').value;
+        var age=document.getElementById('age').value;
+        var account=document.getElementById('account').value;
+        var password=document.getElementById('password').value;
+        var contry=document.getElementById('select').value;
+        var main=document.getElementById('main');
+        if(fname==''||lname==''||gender==null||age==''||account==''||password==''||habit==null) { alert('請輸入正確!'); return; }
+        var content=
+        `
+        <span>No${id}.</span>
+        <div class="item" id="user${id}">
+            <div class="fname">First name : "${fname}"</div>
+            <div class="lname">Last name : "${lname}"</div>
+            <div class="account">Account : "${account}"</div>
+            <div class="password">Password : "${password}"</div>
+            <div class="ga">Gender | Age : "${gender}" | "${age}"</div>
+            <div class="contry">Contry : "${contry}"</div>
+            <div class="habit">Habit : "${habit}"</div>
+        </div>
+        `
+        main.innerHTML+=content; 
+        id++;
+        account='';
+        password='';
+    }
+
+</script>
+</body>
+</html>
