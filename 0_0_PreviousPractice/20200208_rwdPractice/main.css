@@ -1,0 +1,138 @@
+.header{
+    position: fixed;
+    display: flex;
+    background-color: white;
+    border-bottom: #aaa 2px solid;
+    margin: auto;
+    height: 50px;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 2;
+}
+.header .logo img{
+    width: 133px;
+    height: 47px;
+    box-sizing: border-box;
+    margin-left: 10px;
+}
+.header .nav{
+    position: absolute;
+    top:50px;
+    box-sizing: border-box;
+    right:0px;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    height: 48px;
+}
+.header .nav a{
+    display: block;
+    border-bottom: #aaa 2px solid;
+    background-color: white;
+    font-size: 25px;
+    line-height: 48px;
+    padding-left: 30px;
+    text-decoration: none;
+    color: black;
+}
+.header .nav a:hover{
+    background-color: rgb(255, 136, 0);
+    color: white;
+}
+.header .btn img{
+    display: inline-block;
+    width: 40px;
+    height: 38px;
+    box-sizing: border-box;
+    position: absolute;
+    right:10px;
+    top:5px;
+    cursor: pointer;
+}
+/*banner*/
+.banner{
+    display: block;
+    width: 100%;
+    padding-top: 50px;
+}
+.banner img{
+    width: 100%;
+    display: block;
+    vertical-align: bottom;
+}
+/*wrap*/
+.wrap{
+    width:100%;
+}
+.wrap .title{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 80px;
+}
+.wrap .container .item{
+    margin-bottom: 30px;
+}
+.wrap .container img{
+    width: 100%;
+    z-index: 1;
+}
+.wrap .container img:hover{
+    opacity: 50%;
+}
+.wrap .container h3,p{
+    padding: 0px 10px;
+}
+.wrap .container h3{
+    margin-top: 10px;
+    font-size: 30px;
+}
+.wrap .container p{
+    font-size: 20px;
+}
+/*footer*/
+.footer{
+    text-align: center;
+    color: #aaa;
+    background-color: black;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+@media screen and (min-width:768px){
+    .header .btn{
+        display: none;
+    }
+    .header .nav{
+        display:flex;
+        flex-direction: row;
+        width: auto;
+        right: 30px;
+        top: 0px;  
+    }
+    .header .nav a{
+        display: inline-block;
+        margin-right: 10px;
+        color: black;
+        line-height:47px;
+        padding-left: 0px;
+        border-bottom: none;
+    }
+    /*banner*/
+    .banner{
+        width: 100%;
+    }
+    /*wrap*/
+    .wrap .container{
+        display: flex;
+    }
+    .wrap .container .item{
+        padding: 10px;
+    }
+    /*footer*/
+    .footer{
+        font-size: 20px;
+    }
+}
+

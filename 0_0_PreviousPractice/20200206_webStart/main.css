@@ -1,0 +1,37 @@
+h1{
+    text-align: center;
+}
+.nav{
+    font-size: 0px;
+    text-align: center;
+    background-color: #9cb31d;
+}
+.nav a{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 25px;
+    text-decoration: none;
+}
+.nav a:hover{
+    color: cornsilk;
+    background-color: indigo;
+}
+.container{
+    text-align: center;
+    background-color: khaki;
+}
+p{
+    display: inline-block;
+    width: 30%;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    background-color: azure;
+    color: rgb(58, 24, 180);
+}
+.fix{
+    width: 100%;
+    clear: both;
+}
+
+

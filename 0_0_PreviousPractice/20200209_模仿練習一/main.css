@@ -1,0 +1,153 @@
+.header {
+    width: 100%;
+    border-bottom: .5px solid #aaa;
+    box-sizing: border-box;
+    height: 56px;
+    position: fixed;
+    top:0px;
+    background-color: white;
+}
+.header .wrap{
+    width: 100%;
+    display: flex;
+}
+.header .btn{
+    padding-top: 16px;
+    padding-left: 24px;
+}
+.header .logo{
+    padding-top: 13px;
+    padding-left: 16px;
+}
+.header .nav-right{
+    padding-top: 16px;
+    position: absolute;
+    right:20px;
+    display: flex;
+}
+.header .btn img{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.header .logo img{
+    box-sizing: border-box;
+    width: 80px;
+    height: 30px;
+}
+.header .nav-right img{
+    box-sizing: border-box;
+    width: 26px;
+    height: 24px;
+    margin-right: 15px;
+}
+
+.header .nav-left{
+    position: absolute;
+    top:56px;
+    display: none;
+    background-color: orange;
+    height: 100vh;
+}
+.header .nav-left .wrap{
+    display: flex;
+    flex-direction: column;
+}
+.header .nav-left .wrap a{
+    display: flex;
+    text-decoration: none;
+    color:black;
+    font-size: 20px;
+    line-height: 56px;
+    padding-left: 20px;
+    border-bottom: .5px solid #aaa;
+    width: 200px;
+}
+.header .nav-left .wrap a:hover{
+    background-color: #aaa;
+}
+.header .nav-left .wrap img{
+    width: 26px;
+    height: 26px;
+    margin-right: 20px;
+    padding-top: 12px;
+}
+.header .nav-bottom{
+    width: 100%;
+    background-color: #ddd;
+    display: flex;
+    position: fixed;
+    bottom:0px;
+    box-sizing: border-box;
+    height: 60px;
+}
+.header .nav-bottom a{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+.header .nav-bottom img{
+    box-sizing: border-box;
+    height:30px;
+    width: 30px;
+    margin: auto;
+}
+.header .nav-bottom p{
+    margin-top: 3px;
+}
+/*main*/
+.main{
+    background-color: #eee;
+    margin-top: 56px;
+    margin-bottom: 60px;
+}
+.main .wrap .item{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.main .wrap .item img{
+    width: 100%;
+}
+/*footer*/
+.footer{
+    text-align: center;
+    vertical-align: bottom;
+    background-color: black;
+    color: #aaa;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+
+
+
+
+
+@media screen and (min-width:768px){
+    .header .nav-bottom{
+        display: none;
+    }
+    .header .nav-left{
+        display: inline-block;
+    }
+    .main{
+        margin-bottom: 0px;
+    }
+    .main .wrap{
+        display: flex;
+    }
+    .switch{
+        display: flex;
+        margin-left: 220px;
+    }
+    .main .wrap .item{
+        padding: 5px;
+    }
+
+}

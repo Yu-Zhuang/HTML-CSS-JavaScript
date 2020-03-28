@@ -1,0 +1,53 @@
+body{
+	margin: 0px;
+	background-color: #EDEDED;
+}
+.top{
+	background-color: white;
+}
+.paragragh img{
+	display: flex;
+}
+.header{
+	display: inline-flex;
+}
+.header h1{
+	padding-left: 100px;
+}
+.nav{
+	display: inline-flex;
+	justify-content: space-between;
+}
+.nav ul{
+	display: inline-flex;
+}
+.nav li{
+	padding-right: 10px;
+}
+.nav a{
+	text-decoration: none;
+	font-size: 20px;
+	color: gray;
+}
+.footer{
+	background-color: #3F3F3F;
+}
+.footer_info h3{
+	margin-top: 0px;
+	color: white;
+}
+.footer p{
+	color: #A4A4A4;
+}
+.footer a{
+	color: #A4A4A4;
+	text-decoration: none;
+	padding-right: 5px;
+}
+li{
+	display: inline;
+}
+.footer_copytight p{
+	margin-bottom: 0px;
+	text-align: center;
+}

@@ -1,0 +1,107 @@
+html{
+    background-color: #caa;
+}
+.header{
+    border-bottom: 1px solid #aaa;
+    box-sizing: border-box;
+    height: 56px;
+    width: 100%;
+    display:flex;
+    background-color: white;
+}
+.header .btn a{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    margin: 16px 20px;
+    background-color:#aaa;
+}
+.header .logo a{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 80px;
+    height: 24px;
+    margin: 16px 0px;
+    background-color:#f00;
+}
+.header .search{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 40%;
+    height: 32px;
+    margin: auto;
+    border:1px solid #aaa;
+    display: none;
+}
+.header .nav-right{
+    position: absolute;
+    right: 10px;
+    display: flex;
+}
+.header .nav-right a{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    background-color:#555;
+    margin: 16px 5px;   
+}
+.header .nav-left{
+    width: 220px;
+    height: 100vh;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+    position: absolute;
+    top:56px;
+    left:0px;
+    display: none;
+    background-color: white;
+}
+.header .nav-left .wrap{
+    display: flex;
+    flex-direction: column;
+}
+.header .nav-left .wrap a{
+    box-sizing: border-box;
+    width: 100%;
+    height: 56px;
+    border-bottom: #aaa 1px solid;
+}
+.header .nav-left .wrap a:hover{
+    background-color: #aaa;
+}
+.header .nav-bottom{
+    box-sizing: border-box;
+    position: fixed;
+    bottom:0px;
+    width: 100%;
+    height: 56px;
+    border-top: #aaa 1px solid;
+}
+.header .nav-bottom .wrap{
+    display: flex;
+    background-color: #eee;
+}
+.header .nav-bottom .wrap a{
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    background-color: #bbb;
+    margin: 16px auto;  
+}
+
+
+
+@media screen and (min-width:768px){
+    .header .search{
+        display: inline-block;
+    }
+    .header .nav-left{
+        display:flex;
+        flex-direction: column;
+    }
+    .header .nav-bottom{
+        display: none;
+    }
+}

@@ -1,0 +1,44 @@
+
+.header{
+	text-align:center;
+}
+.header p{
+	font-size: 25px;
+}
+.outheader{	
+	padding-top: 0px;
+	background-image: url("https://images.unsplash.com/photo-1520140933970-3d259afe9f9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80");
+}
+.nav{
+	padding-top: 10px;
+	margin-bottom: 0px;
+}
+.nav li{
+	color:red;
+	display: inline;
+	padding-right: 20px;
+	font-size: 30px;
+	
+}
+h1{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+ul{
+	margin-bottom: 0px;
+}
+.nav a{
+	color: gray;
+	text-decoration: none;
+}
+.paragraph{
+	color: white;
+}
+.paragraph p{
+	color: white;
+}
+.footer{
+	background-color:gray;
+	text-align:center;
+	border: 2px solid black;
+}

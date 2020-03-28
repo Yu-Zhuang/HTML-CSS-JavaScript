@@ -1,0 +1,176 @@
+html{
+    background-color: #eee;
+}
+.header{
+    box-sizing: border-box;
+    width: 100%;
+    height: 56px;
+    display: flex;  
+    position: fixed;
+    top:0px;
+    border-bottom: 1px solid #aaa;
+    background-color: white;
+}
+.header .btn{
+    display: none;
+    box-sizing: border-box;
+    margin: auto 0px;
+    margin-left: 20px;
+}
+.header .btn img{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+.header .logo{
+    box-sizing: border-box;
+    margin: auto 20px;
+}
+.header .logo a img{
+    width: 80px;
+    height: 24px;
+}
+.header .search{
+    box-sizing: border-box;
+    height: 32px;
+    width: 40%;
+    display: none;
+}
+.header .nav-right{
+    position: absolute;
+    top:16px;
+    right:16px;
+    display: flex;
+}
+.header .nav-right a img{
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    margin: 0px 10px;
+}
+.header .nav-right a{
+    text-decoration: none;
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
+}
+.header .nav-right .sign{
+    text-align: center;
+    display: none;
+    box-sizing: border-box;
+    height: 40px;
+    width: 105px;
+    margin: -8px 5px;
+    border: 1px solid #00f;
+}
+.header .nav-right .sign p{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.header .nav-left{
+    display: flex;
+    flex-direction: column;
+    border-right:1px solid #aaa;
+    background-color: white;
+    box-sizing: border-box;
+    width: 240px;
+    height: 100vh;
+    position: absolute;
+    top:56px;
+    display: none;
+}
+.header .nav-left .wrap{
+    padding-top: 20px;
+}
+.header .nav-left a{
+    display: flex;
+    box-sizing: border-box;
+    width: 240px;
+    height: 40px;
+    border-bottom: black 1px solid;
+}
+.header .nav-left a:hover{
+    background-color: #f90;
+}
+.header .nav-left img{
+    margin: auto 30px;
+    width: 24px;
+    height: 24px;
+}
+.header .nav-left a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.header .nav-left p{
+    margin: auto 20px;
+}
+
+.header .nav-bottom{
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 47px;
+    background-color: #fa5;
+}
+.header .nav-bottom a{
+    margin: auto;
+}
+.header .nav-bottom img{
+    width: 24px;
+    height: 24px;
+}
+/*container*/
+.container{
+    margin: 56px auto 47px auto;
+}
+.container .wrap .item img{
+    width: 100%;
+}
+.container .wrap .item{
+    margin-bottom: 30px;
+    background-color: #ed0;
+}
+.container .wrap .item h3{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+
+@media screen and (min-width:768px){
+    .header .btn{
+        display: block;
+    }
+    .header .nav-left{
+        display: flex;
+    }
+    .header .nav-bottom{
+        display: none;
+    }
+    .header .nav-right .sign{
+        display: block;
+    }
+    .container{
+        margin-bottom: 0px;
+    }
+    .swift{
+        margin-left: 240px;
+    }
+    .container .wrap{
+        width: 97%;
+        margin: 0px auto;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+
+        background-color: white;
+    }
+    .container .wrap .item{
+        box-sizing: border-box;
+        margin: 20px 10px;
+    }
+}
