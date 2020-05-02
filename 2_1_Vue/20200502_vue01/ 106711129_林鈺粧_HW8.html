@@ -1,0 +1,92 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .info{
+      display: block;
+    }
+    img{
+      height: 230px;
+      margin: 10px;
+    }
+    #p1{
+      display: flex;
+    }
+    a{
+      text-decoration:none;
+      font-size: large;
+      color: #aaa;
+      font-weight: bold;
+      background-color: burlywood;
+    }
+    a:hover{
+      color: #000;
+    }
+    .color-box{
+      margin: 10px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- APP_BODY -->
+  <div class="app">
+    <!--PRODUCT-->
+    <div class="product">
+      <!-- PRODUCT_1 -->
+      <div id="p1">
+        <img v-bind:src='image_1' alt="">
+        <div class="info">
+          <h1>{{product}}</h1>
+          <p>Num : {{num}}</p>
+          <p v-if='num>=5'>in stock</p>
+          <p v-else-if='num>0 && num<5'>almost sold out</p>
+          <p v-else>out of stock</p>
+          <ul>
+            <li v-for='item in info'>{{ item }}</li>
+          </ul>
+          <!--@mouseover, @click, @submit, @keyup.enter, @--> <!-- style binding-->
+          <div v-for='item in vary' :key='item.varyId' class="color-box" 
+                :style="{backgroundColor: item.varyColor}" 
+                @mouseover='changeColor(item.varyImage)'></div>
+          <p>COUNT: {{count}}</p>
+          <button v-on:click='count += 1'>Add one</button>
+          <button v-on:click="deletF">Delete one</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+  app = new Vue({
+    // element
+    el: '#p1',
+    // data
+    data:{
+      product: 'Sock',
+      image_1: './p1.jpg',
+      num: 5,
+      info: ['50% protein', '40% carbohydrate', '10% lipid'],
+      vary: [ {varyId: 1001, varyColor: 'green', varyImage:'./p1.jpg'}, { varyId: 1002, varyColor: 'red', varyImage:'./p2.jpg'} ],
+      count: 0,
+    },
+    // function
+    methods:{
+      deletF: function(){ // also: deletF(){}
+        this.count -= 1;
+      },
+      changeColor: function(varyImage){
+        this.image_1 = varyImage;
+      }
+    }
+  })
+</script>
+</body>
+</html>
