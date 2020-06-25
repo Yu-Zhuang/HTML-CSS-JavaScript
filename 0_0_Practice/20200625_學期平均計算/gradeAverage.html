@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: powderblue;
+        }
+        h1{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        .action{
+            display: block;
+            text-align: center;
+        }
+        #input{
+            text-align: center;
+        }
+        #input h2{
+            margin-bottom: 0;
+            padding-left:60px;
+        }
+        button{
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+        }
+        #ans{
+            text-align: center;
+            color: orangered;
+        }
+        .footer{
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="getInput()">
+    <h1>學期總平均成績計算</h1>
+    <h2>(加權平均)</h2>
+    <div id="input">
+        <h2>學分 | 成績</h2>
+    </div>
+    <div class="action">
+        <button onclick="ans()">計算總平均</button>
+    </div>
+    <div id="ans"></div>
+    <div class="footer"><p>2020.6.25 some copy right information</p></div>
+<script>
+    var N = 0;
+    function getInput(){
+        var input = prompt("請問您這學期有幾個科目?", 1);
+        while(input<1){
+            alert('wrong number');
+            input = prompt("請問您這學期有幾個科目?", 1);
+        }
+        for(let i=0;i<input;i++){
+            add(i);
+        }
+        N = input;
+    }
+
+    function add(n){
+        let main = document.getElementById("input");
+        main.innerHTML += `<br>科目${n+1}. <input type="number" id="weight_${n}"><input type="number" id="grade_${n}">`;
+        console.log('suscess');
+    }
+
+    function ans(n=N){
+        let ret = document.getElementById("ans");
+        let total_weight = 0;
+        let total_grade = 0;
+        
+        for(let i=0; i<n;i++){
+            total_weight += parseInt(document.getElementById("weight_"+i).value);
+            total_grade += document.getElementById("grade_"+i).value * document.getElementById("weight_"+i).value;
+        }
+        ret.innerHTML = `<h2>您的學期總平均為: ${total_grade/total_weight} 分</h2>`; 
+    }
+</script>
+</body>
+</html>
