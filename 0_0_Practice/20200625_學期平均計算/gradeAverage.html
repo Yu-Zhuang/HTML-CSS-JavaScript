@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>算學期平均</title>
     <style>
         body{
             background-color: powderblue;
         }
         h1{
-            text-align: center;
-        }
-        h2{
             text-align: center;
         }
         .action{
@@ -32,29 +29,31 @@
         }
         #ans{
             text-align: center;
-            color: orangered;
+            color: black;
         }
-        .footer{
-            position: fixed;
-            bottom: 0px;
-            width: 100%;
-            text-align: center;
+        input[type=number]{
+            width: 50px;
+        } 
+        .a{
+          color: orangered;
         }
     </style>
 </head>
 <body onload="getInput()">
-    <h1>學期總平均成績計算</h1>
-    <h2>(加權平均)</h2>
+    <h1>學期總平均成績計算<br>(加權平均)</h1>
     <div id="input">
         <h2>學分 | 成績</h2>
     </div>
     <div class="action">
         <button onclick="ans()">計算總平均</button>
+        <button onclick="refresh()">更改科目數</button>
     </div>
     <div id="ans"></div>
-    <div class="footer"><p>2020.6.25 some copy right information</p></div>
 <script>
     var N = 0;
+    function refresh(){
+        window.location.reload();
+    }
     function getInput(){
         var input = prompt("請問您這學期有幾個科目?", 1);
         while(input<1){
@@ -69,7 +68,7 @@
 
     function add(n){
         let main = document.getElementById("input");
-        main.innerHTML += `<br>科目${n+1}. <input type="number" id="weight_${n}"><input type="number" id="grade_${n}">`;
+        main.innerHTML += `<br>科目${n+1}. <input type="number" id="weight_${n}" ><input type="number" id="grade_${n}" >`;
         console.log('suscess');
     }
 
@@ -82,7 +81,17 @@
             total_weight += parseInt(document.getElementById("weight_"+i).value);
             total_grade += document.getElementById("grade_"+i).value * document.getElementById("weight_"+i).value;
         }
-        ret.innerHTML = `<h2>您的學期總平均為: ${total_grade/total_weight} 分</h2>`; 
+        let answer = total_grade/total_weight;
+        answer = parseInt(answer*1000)/1000;
+        ret.innerHTML = `<h2>您的學期總平均為: <span class="a">${answer}</span> 分</h2>`; 
+        let tp = [89, 84, 79, 76, 72, 69, 66, 62, 59], tpg = [4.3,4.0,3.7,3.3,3.0,2.7,2.3,2.0,1.7], gpa = 0.0;
+        for(let i=0;i<tp.length;i++){
+            if(answer>tp[i]){
+                gpa = tpg[i];
+                break;
+            }
+        }
+        ret.innerHTML += `<h2>GPA: <span class="a">${gpa}</span> 分</h2>`; 
     }
 </script>
 </body>
